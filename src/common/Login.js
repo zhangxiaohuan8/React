@@ -85,7 +85,7 @@ const styles=StyleSheet.create({
     input:{
         borderColor:"silver",
         width:320,
-        height:34,
+        height:50,
         borderBottomWidth:1,
         alignItems:"center",
         margin:10
