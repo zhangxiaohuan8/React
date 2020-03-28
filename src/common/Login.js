@@ -46,6 +46,7 @@ export default class Login extends Component {
                         <TextInput 
                             placeholder="用户名"
                             onChangeText={this.userhandle}
+                            style={{paddingTop:0,paddingBottom:0}}
                         />
                     </View>
                     <View style={[{flexDirection:'row'},styles.input]}>
@@ -54,6 +55,7 @@ export default class Login extends Component {
                             placeholder="密码"
                             onChangeText={this.pwdhandle}
                             secureTextEntry={true}
+                            style={{paddingTop:0,paddingBottom:0}}
                         />
                     </View>
                     
@@ -85,7 +87,7 @@ const styles=StyleSheet.create({
     input:{
         borderColor:"silver",
         width:320,
-        height:50,
+        height:34,
         borderBottomWidth:1,
         alignItems:"center",
         margin:10

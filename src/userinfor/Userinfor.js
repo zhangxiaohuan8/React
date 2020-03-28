@@ -71,7 +71,7 @@ export default class Userinfor extends Component {
     render() {
         return (
             <View>
-                <StatusBar backgroundColor="red" translucent={true}/>
+                <StatusBar backgroundColor="red"/>
                 <ScrollView>
                 <View  style={{width:'100%'}}>
                     <ImageBackground  

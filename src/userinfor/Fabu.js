@@ -6,6 +6,7 @@ import {
   StyleSheet,
   ToastAndroid,
   ScrollView,
+  StatusBar
 } from 'react-native';     
 import Button from 'react-native-button';
 export default class Fabu extends Component {
@@ -57,6 +58,7 @@ export default class Fabu extends Component {
     render() {
         return (
             <View style={{backgroundColor:'#fff'}}>
+            <StatusBar backgroundColor="red"/>
                 <ScrollView>
                 {
                     this.state.tits.map((item)=>(

@@ -19,13 +19,14 @@ export default class Home extends Component {
     render() {
         return (
             <View>
-                <StatusBar backgroundColor="red" translucent={true}/>
+                <StatusBar backgroundColor="red"/>
                 <View style={styles.head}>
                     <View style={{width:'80%',height:50*s,backgroundColor:'#fff',opacity:0.7,borderRadius:25,flexDirection:'row',color:'#fff'}}>
                         <Icon name="search" style={styles.icon}/>
                         <TextInput 
                             placeholder="请输入你要输入的搜索字"
                             placeholderTextColor="#fff"
+                            style={{paddingTop:0,paddingBottom:0}}
                         ></TextInput>
                     </View>
                     <Icon name="shopping-cart" style={styles.icon}/>

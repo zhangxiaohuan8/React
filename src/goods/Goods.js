@@ -5,13 +5,15 @@ import {
   TextInput,
   Text,
   ScrollView,
-  Image
+  Image,
+  StatusBar
 } from 'react-native';
 import {Icon} from '@ant-design/react-native';
 export default function Goods() {
   let [data, setData] = useState([1,2,3,4,5,6]);
   return (
     <View style={styles.back}> 
+    <StatusBar backgroundColor="red"/>
       <View style={styles.head}>
         <View style={styles.input}>
           <TextInput placeholder="请输入商品名称" placeholderTextColor="#a6a6a6"/>

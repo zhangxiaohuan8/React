@@ -13,16 +13,19 @@ export default class Resiger extends Component {
                 <View style={[{flexDirection:'row'},styles.input]}>
                     <TextInput 
                         placeholder="用户名或者用户名"
+                        style={{paddingTop:0,paddingBottom:0}}
                     />
                 </View>
                 <View style={[{flexDirection:'row'},styles.input]}>
                     <TextInput 
                         placeholder="密码"
+                        style={{paddingTop:0,paddingBottom:0}}
                     />
                 </View>
                 <View style={[{flexDirection:'row'},styles.input]}>
                     <TextInput 
                         placeholder="再输入一次密码"
+                        style={{paddingTop:0,paddingBottom:0}}
                     />
                 </View>
             </View>
@@ -47,7 +50,7 @@ const styles=StyleSheet.create({
     input:{
         borderColor:"silver",
         width:320,
-        height:50,
+        height:34,
         borderBottomWidth:1,
         alignItems:"center",
         margin:10

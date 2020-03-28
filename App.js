@@ -1,5 +1,5 @@
 import React,{useState,useEffect} from 'react';
-import {StyleSheet,View,Text, Image, BackHandler,ToastAndroid,AsyncStorage} from 'react-native';
+import {View,Text, Image, BackHandler,ToastAndroid,AsyncStorage} from 'react-native';
 import {Router, Overlay, Scene, Tabs, Drawer, Lightbox, Modal, Actions} from 'react-native-router-flux';
 import { Icon } from '@ant-design/react-native';
 import SplashScreen from 'react-native-splash-screen';
@@ -41,10 +41,36 @@ const App = () => {
         	}
 		})
 	}
-	useEffect(()=>{
-		 init()
-
-	},[])
+	useEffect(() => {
+        init();
+        BackHandler.addEventListener('hardwareBackPress', ()=>{
+            if(Actions.currentScene==='home'){
+                if(new Date().getTime()-now<2000){
+                    BackHandler.exitApp();
+                }
+                else{
+                    ToastAndroid.show("确定退出吗",100);
+                    now =new Date().getTime();
+                    return true;
+                }
+                
+            }
+            else if(Actions.currentScene==='login'){
+                if(new Date().getTime()-now<2000){
+                    BackHandler.exitApp();
+                }
+                else{
+                    ToastAndroid.show("确定退出吗",100);
+                    now =new Date().getTime();
+                    return true;
+                }
+            }
+            else{
+                Actions.pop();
+                return true;
+            }
+        });
+      });
 	let afterInstall =()=>{
 		setInstall(false);
 	}
@@ -55,31 +81,6 @@ const App = () => {
 	}
 	return (
 		<Router
-			backAndroidHandler={()=>{
-				if(Actions.currentScene === 'home'){
-					if(new Date().getTime()-now<2000){
-						BackHandler.exitApp();
-					}else{
-						ToastAndroid.show('确定要退出吗',100);
-						now = new Date().getTime();
-						return true;
-					}
-				}
-				else if(Actions.currentScene === 'login'){
-					if(new Date().getTime()-now<2000){
-						BackHandler.exitApp();
-					}else{
-						ToastAndroid.show('确定要退出吗',100);
-						now = new Date().getTime();
-						return true;
-					}
-				}
-				else{
-					Actions.pop();
-          			return true;
-				}
-				
-			}}
 		>
 			<Overlay>
 			<Modal key="modal" hideNavBar>
