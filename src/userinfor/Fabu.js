@@ -6,9 +6,12 @@ import {
   StyleSheet,
   ToastAndroid,
   ScrollView,
-  StatusBar
+  StatusBar,
+  Dimensions
 } from 'react-native';     
 import Button from 'react-native-button';
+const {width,scale} = Dimensions.get('window');
+const s=width/640;
 export default class Fabu extends Component {
     constructor(){
         super();
@@ -57,7 +60,7 @@ export default class Fabu extends Component {
     }
     render() {
         return (
-            <View style={{backgroundColor:'#fff'}}>
+            <View style={{backgroundColor:'#fff',width:'100%'}}>
             <StatusBar backgroundColor="red"/>
                 <ScrollView>
                 {

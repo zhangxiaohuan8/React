@@ -14,7 +14,8 @@ export default class Login extends Component {
         }
     }
     userhandle=(text)=>{
-        this.setState({username:text})
+        this.setState({username:text});
+        console.log(this.state.username);
     }
     pwdhandle=(text)=>{
         this.setState({pwd:text});
@@ -32,6 +33,7 @@ export default class Login extends Component {
             .then(()=>{
                 this.setState({isloading:false})
                 Actions.homePage();
+                console.log(res);
             })
         })
     }
